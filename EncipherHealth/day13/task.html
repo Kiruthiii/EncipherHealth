@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Library</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background-color: #f1f5cf;
+        }
+
+        .block{
+            display: block;
+            background-color: #cce5ff;
+            padding: 10px;
+            margin: 6px 0;
+        }
+
+        .inline{
+            display: inline;
+            background-color: #d4edda;
+            padding: 4px;
+        }
+
+        .inlineblock{
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            background-color: #fff3cd;
+            text-align: center;
+            line-height: 40px;
+            margin: 4px;
+        }
+
+        .none{
+            display: none;
+        }
+
+        .hidden{
+            visibility: hidden;
+        }
+
+        .inlineToBlock{
+            display: block;
+            background-color: #e2d6f3;
+            padding: 6px;
+            margin: 6px 0;
+        }
+
+        .blockToInline{
+            display: inline;
+            background-color: #f8d7da;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Welcome to the Mini Library</h1>
+
+<p>
+This page shows how different items in a small library are placed and shown.
+Some items need full space, while others fit neatly in one line.
+</p>
+
+<h2>Book Shelves</h2>
+<p>
+Each shelf takes its own space from top to bottom.
+</p>
+
+<div class="block">Fiction Shelf</div>
+<div class="block">Science Shelf</div>
+<div class="block">History Shelf</div>
+
+<h2>Reading </h2>
+<p>
+These tags appear on the same line inside a book.
+</p>
+
+<span class="inline">Novel</span>
+<span class="inline">Poetry</span>
+<span class="inline">Biography</span>
+
+<h2>Library Sections</h2>
+<p>
+These sections stay in one row but have their own size.
+</p>
+
+<div class="inlineblock">Kids</div>
+<div class="inlineblock">Teens</div>
+<div class="inlineblock">Adults</div>
+
+<h2>Removed Notice</h2>
+<p>
+An old notice was removed completely.
+</p>
+
+<p>Library is open today</p>
+<p class="none">Library closed for maintenance</p>
+<p>Visitors can continue reading</p>
+
+<h2>Hidden Notice</h2>
+<p>
+This notice is hidden but still occupies space.
+</p>
+
+<p>Quiet Zone Ahead</p>
+<p class="hidden">Mobile phones not allowed</p>
+<p>You may feel a small gap above</p>
+
+<h2>Changing Item Behavior</h2>
+<p>
+Some items change how they appear on the page.
+</p>
+
+<span class="inlineToBlock">Book label now on a new line</span>
+
+<br><br>
+
+<div class="blockToInline">Counter A</div>
+<div class="blockToInline">Counter B</div>
+
+</body>
+</html>

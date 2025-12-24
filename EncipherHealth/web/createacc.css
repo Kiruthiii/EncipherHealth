@@ -1,0 +1,107 @@
+*{
+    margin:0;
+}
+.form-page{
+    min-height: 100vh;
+    background-color: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-card{
+    width: 100%;
+    max-width: 480px;
+    padding: 80px 60px;
+    border: 1px solid rgba(201,162,77,0.35);
+    text-align: center;
+}
+
+.form-card h2{
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #c9a24d;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.form-sub{
+    font-size: 15px;
+    color: rgba(245,245,245,0.7);
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.form-card form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-card input{
+    background: transparent;
+    border: 1px solid rgba(245,245,245,0.2);
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #f5f5f5;
+    outline: none;
+}
+
+.form-card input:focus{
+    border-color: #c9a24d;
+}
+
+.form-card button{
+    margin-top: 30px;
+    padding: 14px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background-color: #c9a24d;
+    border: none;
+    cursor: pointer;
+}
+
+.form-note{
+    margin-top: 30px;
+    font-size: 13px;
+    color: rgba(184,184,184,0.7);
+}
+
+.form-link{
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #c9a24d;
+    text-decoration: none;
+}
+
+.form-link:hover{
+    text-decoration: underline;
+}
+.back-home{
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 15px;
+    color: rgba(245,245,245,0.7);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.back-home:hover{
+    color: #c9a24d;
+    transform: translateX(-4px);
+}
+.form-card{
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

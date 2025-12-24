@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+ 
+        .p{
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 90px;
+            align-items: center;
+            height:50%;
+            background-color: brown;
+            width: 800px;
+            
+        }
+
+        .h{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            margin-left:45px;
+        }
+        .four{
+            margin: 90px;
+            padding:10px;
+            display: flex;
+            background-color: violet;
+            width:275px;
+            justify-content: center;
+
+        }
+        .six{
+            margin-left:90px ;
+            display: flex;
+            justify-content:center;
+        }
+        .bottom{
+            display: flex;
+            justify-content:center;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="p">
+        <div class="h">
+            <svg width="200" height="200">
+    <rect x="10" y="10" width="100" height="100" fill="skyblue"/>
+</svg>
+       <svg width="200" height="200">
+    <rect x="10" y="10" width="100" height="100" fill="skyblue"/>
+</svg>
+        </div>
+         <div class="h">
+            <svg width="200" height="200">
+    <rect x="10" y="10" width="100" height="100" fill="skyblue"/>
+</svg>
+       <svg width="200" height="200">
+    <rect x="10" y="10" width="100" height="100" fill="skyblue"/>
+</svg>
+    </div>
+</div>
+<div class="four">
+    <div class="rounded-b-[300px] h-[100px] w-[50px] bg-sky-400 border-5 border-sky-400 p-9 text-center "style="margin-top:95px;" ></div>
+   <div class="rounded-t-[300px] h-[100px] w-[50px] bg-sky-400 border-5 border-sky-400 p-9 text-center" ></div>
+   <div class="rounded-b-[300px] h-[100px] w-[50px] bg-sky-400 border-5 border-sky-400 p-9 text-center" style="margin-top:95px;" ></div>
+</div>
+<div class="pie" style="background-color: beige;">
+<div class="six">
+ <div class="rounded-tl-[900px] h-[50px] w-[50px] border-2 border-sky-200 bg-sky-200" ></div>
+
+<div class="rounded-tr-[900px] h-[50px] w-[50px] border-2 border-sky-700 bg-sky-700" ></div>
+</div>
+<div class="bottom">
+<div class="rounded-bl-[900px] h-[50px] w-[50px] border-2 border-sky-400 bg-sky-400"></div>
+</div>
+</div>
+</body>
+</html>

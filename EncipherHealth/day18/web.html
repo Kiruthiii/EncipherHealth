@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+
+<style>
+
+body{
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.topbar{
+    display: grid;
+    grid-template-columns: 150px 1fr auto;
+    align-items: center;
+    height: 62px;
+    background-color: #343232;
+    color: white;
+}
+
+.topbar h4,
+.topbar p{
+    margin: 0;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.icons{
+    display: grid;
+    grid-template-columns: repeat(5, 55px);
+    height: 100%;
+}
+
+.icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9b8f8f;
+    text-decoration: none;
+    border-left: 1px solid #4a4848;
+}
+
+.icons a:hover{
+    background-color: #37d314;
+    color: white;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 90px;
+    background-color: white;
+}
+
+.logo{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.menu{
+    display: flex;
+    gap: 40px;
+}
+
+.menu span{
+    cursor: pointer;
+    color: black;
+}
+
+.menu span:hover{
+    color: blue;
+}
+
+#home{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 140px 100px;  
+}
+
+#lhome{
+    width: 45%;
+}
+
+#lhome h2{
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+#lhome p{
+    color: grey;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+#lhome button{
+    background-color: #4e6cff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 16px 40px;
+}
+
+#rhome{
+    width: 45%;
+}
+
+#rhome img{
+    width: 100%;
+}
+#features{
+  padding:100px 0;
+  background:#fff;
+}
+
+.features-container{
+    max-width:1500px;
+  margin:auto;
+  text-align:center;
+}
+
+#features h2{
+  font-size:36px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+.features-para{
+  color:#6c757d;
+  font-size:16px;
+  line-height:1.8;
+  margin-bottom:80px;
+  text-align: center;
+}
+
+.features-layout{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:70px;
+}
+.feature-card{
+  background:#f3f3f3;
+  padding:50px 30px;
+  border-radius:8px;
+  position:relative;
+  transition:all 0.3s ease;
+}
+
+.feature-card h3{
+  margin-top:40px;
+  font-size:20px;
+  font-weight:600;
+}
+
+.feature-card p{
+  color:#6c757d;
+  font-size:15px;
+  line-height:1.8;
+  margin:15px 0 25px;
+}
+
+.feature-card a{
+  text-decoration:none;
+  color:#4d7cff;
+  font-weight:500;
+}
+
+.icon-circle{
+  width:60px;
+  height:60px;
+  background:#4d7cff;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  position:absolute;
+  top:-30px;
+  left:45%;
+}
+
+.feature-card:hover{
+  background:#4d7cff;
+}
+
+.feature-card:hover h3,
+.feature-card:hover p,
+.feature-card:hover a{
+  color:#fff;
+}
+
+.feature-card:hover .icon-circle{
+  background:#fff;
+  color:#4d7cff;
+}
+
+.feature-card:hover{
+  transform:translateY(-10px);
+}
+
+.gather-feedback {
+  max-width: 1500px;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.feedback-image img {
+ width: 700px;
+  height: 700px;
+}
+
+.feedback-content {
+  max-width: 500px;
+}
+
+.feedback-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.feedback-content p {
+  font-size: 16px;
+  color: #6c757d;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.feedback-card {
+  background: #fff;
+  padding: 25px 25px 25px 30px;
+  border-left: 10px solid #4f8cff;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.feedback-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.feedback-header h4 {
+  font-size: 16px;
+  margin: 0;
+  color: #000;
+  text-align: justify;
+  
+}
+
+.feedback-header span {
+  font-size: 18px;
+  font-weight: 200;
+  color:#000;
+  text-align: justify;
+  
+}
+
+.feedback-card blockquote {
+  font-size: 15px;
+  color: #6c757d;
+  line-height: 1.7;
+  font-style: italic;
+  text-align: left;
+  margin: 0;
+}
+
+.gather-feedback2 {
+  max-width: 1500px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  flex-direction: row-reverse;
+}
+.about{
+    padding:120px 120px;
+    background-color: #f3f3f3;
+}
+.about h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+.aboutus-content{
+    display: flex;
+    justify-content: space-between;
+    max-width: 2500px;
+    gap:150px;
+    margin-top: 0px;
+    padding: 20px;
+   
+    
+}
+.ab-img {
+    margin:0px 200px 0px 200px;
+    width: 500px;
+   
+
+}
+.ab-content{
+    padding-left: 250px;
+    
+    
+}
+.ab-content h2{
+    font-size: 25px;
+    font-weight: 200;
+}
+.ab-content p{
+    color: #9b8f8f;
+}
+.ab-content button{
+    background-color: #4d7cff;
+    color: white;
+    border-radius:20px;
+    padding: 3px;
+    width:150px;
+    height:60px;
+    font-size: 20px;
+
+}
+.ourteams{
+    text-align: center;
+    padding:120px 120px;
+}
+.ourteams h1{
+    font-size: 50px;
+    font-weight: bold;
+
+}
+.ourteams p{
+    font-size: 20px;
+    color: #4a4848;
+}
+.ourteams .team-pic {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-left: 200px;
+    margin-top: 0px;
+    gap: 2px;
+    text-align: left;
+    max-width:1500px;
+
+}
+
+.ourteams .team-pic p{
+    width:400px;
+}
+.team-pic h3+p{
+    color: blue;
+}
+.ourteams .team-pic img{
+  height:400px;
+  width:400px;
+
+}
+
+.team-pic .sm{
+    display: none;
+    position:relative;
+    top:-30px;
+    left:25%;
+    gap: 15px;
+    border: 2px solid;
+    padding:10px;
+
+}
+
+.team-pic > div{
+    position: relative;
+}
+
+
+.team-pic > div:hover .sm{
+    display: flex;
+}
+
+.team-pic .sm i{
+    font-size: 20px;
+    color: white;
+    background: #4d7cff;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+<div class="topbar">
+    <h4>COLORLIB.</h4>
+    <p style="color:#9b8f8f;">+ IMAGINE</p>
+
+    <div class="icons">
+        <a href="#"><i class="fa-solid fa-desktop"></i></a>
+        <a href="#"><i class="fa-solid fa-tablet-screen-button"></i></a>
+        <a href="#"><i class="fa-solid fa-mobile-screen-button"></i></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="#"><i class="fa-solid fa-xmark"></i></a>
+    </div>
+</div>
+
+
+<div class="navbar">
+    <div class="logo">imagine.</div>
+
+    <div class="menu">
+        <span>Home</span>
+        <span>Features</span>
+        <span>About Us</span>
+        <span>Testimonials</span>
+        <span>Blog</span>
+        <span>Contact</span>
+    </div>
+</div>
+<div id="home">
+    <div id="lhome">
+        <h2>Make Your Business More Profitable</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+            Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.
+        </p>
+        <button>Get Started</button>
+    </div>
+
+    <div id="rhome">
+        <img src="https://preview.colorlib.com/theme/imagine/images/undraw_investing_7u74.svg">
+    </div>
+</div>
+<div id="features">
+  <div class="features-container">
+    <h2>Imagine Features</h2>
+    <p class="features-para">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quos<br>
+      quaerat sapiente nam, id vero.
+    </p>
+    <div class="features-layout">
+      <div class="feature-card">
+        <div class="icon-circle">
+          <i class="fa-solid fa-rotate"></i>
+        </div>
+        <h3>Marketing Consulting</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Perferendis quis molestiae vitae eligendi at.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="feature-card ">
+        <div class="icon-circle">
+          <i class="fa-solid fa-shop"></i>
+        </div>
+        <h3>Market Analysis</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Perferendis quis molestiae vitae eligendi at.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+      <div class="feature-card">
+        <div class="icon-circle">
+         <i class="fa-solid fa-basket-shopping"></i>
+        </div>
+        <h3>Easy Purchase</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Perferendis quis molestiae vitae eligendi at.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+       <div class="feature-card">
+        <div class="icon-circle">
+         <i class="fa-solid fa-arrow-rotate-left"></i>
+        </div>
+        <h3>Free Updates</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+       <div class="feature-card">
+        <div class="icon-circle">
+         <i class="fa-regular fa-face-smile"></i>
+        </div>
+        <h3>100% Satistified</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Perferendis quis molestiae vitae eligendi at.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+       <div class="feature-card">
+        <div class="icon-circle">
+         <i class="fa-solid fa-plug"></i>
+        </div>
+        <h3>Easy Plugin</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Perferendis quis molestiae vitae eligendi at.
+        </p>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+     <div class="gather-feedback">
+    <div class="feedback-image">
+      <img src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg" alt="illustration">
+    </div>
+    <div class="feedback-content">
+      <h2>Communicate and gather feedback</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptatem neque nisi architecto autem molestias corrupti officia veniam.
+      </p>
+      <div class="feedback-card">
+        <div class="feedback-header">
+          <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="profile">
+          <div>
+            <h4>Grey Simpson</h4>
+            <span>Co-Founder, XYZ Inc.</span>
+          </div>
+        </div>
+
+        <blockquote>
+          “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Ducimus vitae ipsa asperiores inventore aperiam iure.”
+        </blockquote>
+      </div>
+    </div></div>
+     <div class="gather-feedback2">
+    <div class="feedback-image">
+      <img src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg" alt="illustration">
+    </div>
+    <div class="feedback-content">
+      <h2>Communicate and gather feedback</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptatem neque nisi architecto autem molestias corrupti officia veniam.
+      </p>
+      <div class="feedback-card">
+        <div class="feedback-header">
+          <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="profile">
+          <div>
+            <h4>Kimberly Gush</h4>
+            <span>Co-Founder, XYZ Inc.</span>
+          </div>
+        </div>
+
+        <blockquote>
+          “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Ducimus vitae ipsa asperiores inventore aperiam iure.”
+        </blockquote>
+      </div>
+    </div></div>
+     <div class="gather-feedback">
+    <div class="feedback-image">
+      <img src="https://preview.colorlib.com/theme/imagine/images/undraw_gift_card_6ekc.svg" alt="illustration">
+    </div>
+    <div class="feedback-content">
+      <h2>Communicate and gather feedback</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptatem neque nisi architecto autem molestias corrupti officia veniam.
+      </p>
+      <div class="feedback-card">
+        <div class="feedback-header">
+          <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg" alt="profile">
+          <div>
+            <h4>Grey Simpson</h4>
+            <span>Co-Founder, XYZ Inc.</span>
+          </div>
+        </div>
+
+        <blockquote>
+          “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Ducimus vitae ipsa asperiores inventore aperiam iure.”
+        </blockquote>
+      </div>
+    </div></div>
+     <div class="gather-feedback2">
+    <div class="feedback-image">
+      <img src="https://preview.colorlib.com/theme/imagine/images/undraw_metrics_gtu7.svg" alt="illustration">
+    </div>
+    <div class="feedback-content">
+      <h2>Communicate and gather feedback</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptatem neque nisi architecto autem molestias corrupti officia veniam.
+      </p>
+      <div class="feedback-card">
+        <div class="feedback-header">
+          <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg" alt="profile">
+          <div>
+            <h4>Kimberly Gush</h4>
+            <span>Co-Founder, XYZ Inc.</span>
+          </div>
+        </div>
+
+        <blockquote>
+          “Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Ducimus vitae ipsa asperiores inventore aperiam iure.”
+        </blockquote>
+      </div>
+    </div></div>
+  </div>
+</div>
+<div id="aboutus">
+<div class="about">
+    <h2>About Us</h2>
+    <div class="aboutus-content">
+    <div class="ab-img">
+        <img src="https://preview.colorlib.com/theme/imagine/images/undraw_bookmarks_r6up.svg">
+    </div>
+    <div class="ab-content">
+        <h3>Our Mission</h3>
+        <p>Eos cumque optio dolores excepturi rerum temporibus magni recusandae eveniet, totam omnis consectetur maxime quibusdam expedita dolorem dolor nobis dicta labore quaerat esse magnam unde, aperiam delectus! At maiores, itaque.</p>
+        <p> <a href="#"><i class="fa-solid fa-check"></i></a>Laborum enim quasi at modi</p>
+        <p> <a href="#"><i class="fa-solid fa-check"></i></a>Ad at tempore</p>
+        <p> <a href="#"><i class="fa-solid fa-check"></i></a>Labore quaerat esse</p>
+        <br>
+        <button> learn more</button>
+    </div>
+    </div>
+    </div>
+    <div class="ourteams">
+        
+        <h1>Our Team</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quos</p>
+        <p>quaerat sapiente nam, id vero.</p>
+        <div class="team-pic">
+        <div class="person_1">
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_1.jpg">
+            <div class="sm">
+              <span><i class="bi bi-facebook"></i></span>
+              <span><i class="bi bi-twitter"></i></span>
+              <span><i class="bi bi-instagram"></i></span></div>
+            <h3>Cloe Marena</h3>
+            <p>President</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+        </div>
+        <div class="person_1">
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_2.jpg">
+            <div class="sm">
+              <span><i class="bi bi-facebook"></i></span>
+              <span><i class="bi bi-twitter"></i></span>
+              <span><i class="bi bi-instagram"></i></span></div>
+            <h3>John Rooster</h3>
+            <p>Marketing</p>
+            <p>
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+        </div>
+        <div>
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_3.jpg">
+            <div class="sm">
+              <span><i class="bi bi-facebook"></i></span>
+              <span><i class="bi bi-twitter"></i></span>
+              <span><i class="bi bi-instagram"></i></span></div>
+            <h3>Will Turner</h3>
+            <p>Marketing</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+        </div>
+        <div  class="person_1">
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_4.jpg">
+            <div class="sm">
+              <span><i class="bi bi-facebook"></i></span>
+              <span><i class="bi bi-twitter"></i></span>
+              <span><i class="bi bi-instagram"></i></span></div>
+            <h3>Nicolas Stainer</h3>
+<p>Financing</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+        </div>
+        <div>
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_5.jpg">
+            <div class="sm">
+              <span><i class="bi bi-facebook"></i></span>
+              <span><i class="bi bi-twitter"></i></span>
+              <span><i class="bi bi-instagram"></i></span></div>
+          <h3>George Brook</h3>
+            <p>Founder</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+          </div>
+        <div>
+            <img src="https://preview.colorlib.com/theme/imagine/images/person_6.jpg">
+            <div class="sm">
+              <span><i class="bi bi-facebook"></i></span>
+              <span><i class="bi bi-twitter"></i></span>
+              <span><i class="bi bi-instagram"></i></span></div>
+          <h3>Emely Hopson</h3>
+            <p>Marketing</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum excepturi corporis qui doloribus perspiciatis ipsa modi accusantium repellat.</p>
+          </div>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+</html>

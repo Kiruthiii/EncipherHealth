@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>   
+        *{
+            padding:0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: large;
+        }   
+        body{
+            background-color: rgb(199, 246, 246);
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            height: 750px;
+
+
+        }  
+        .content{
+            padding:25px 25px 25px;
+            border-radius:20px;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0px 10px 25px  gray;
+            width:750px;
+            height:350px;
+        }
+        .ip {
+            display: flex;
+            justify-content: space-between;
+           
+
+        }
+        .ip button{
+            background-color: blue;
+            color: white;
+            width:100px;
+            border-radius: 5px;
+             border: none;
+             height:50px;
+        }
+        .ip input{
+            width: 500px;
+            border-radius: 5px;
+            border-color:blue;
+           
+            
+        }
+        .task1,.task2,.task3{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            border-bottom: 2px dotted rgb(216, 208, 208);
+            
+        }
+        .rem{
+            background-color: red;
+            color: white;
+            width: 100px;
+            height: 30px;
+            border:none;
+            border-radius:5px;
+            
+    
+            
+        }
+       
+        
+
+    </style>
+</head>
+<body>
+    <div class="content">
+    <h2 style="text-align: center;color: blue;">Task Manager</h2>
+    <div class="ip">
+        <input type="text" placeholder="what to do??">
+        <button> Add task</button>
+    </div><br>
+    
+    <div class="task1">
+        <a href="#"><i class="fa-solid fa-check"></i></a><span style="text-decoration: line-through;">TaskA</span><button class="rem">Remove</button>
+    </div>
+    <br>
+    <div class="task2">
+        <a href="#"><i class="fa-solid fa-check"></i></a><span>TaskB</span><button class="rem">Remove</button>
+
+    </div>
+    <br>
+    <div class="task3">
+        <a href="#"><i class="fa-solid fa-check"></i></a><span style="text-decoration: line-through;">TaskC</span><button class="rem">Remove</button>
+    </div>
+    <br>
+  </div>
+
+    
+
+</div>
+    
+</body>
+</html>

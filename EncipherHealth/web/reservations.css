@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+}
+
+.confirmation-page{
+    min-height: 100vh;
+    background-color: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation-card{
+    max-width: 600px;
+    padding: 80px 60px;
+    border: 1px solid rgba(201,162,77,0.35);
+    text-align: center;
+}
+
+.confirmation-card h2{
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: #c9a24d;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.confirmation-sub{
+    font-size: 16px;
+    color: rgba(245,245,245,0.8);
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.confirmation-text{
+    font-size: 15px;
+    color: #b8b8b8;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.confirmation-note{
+    font-size: 14px;
+    color: rgba(245,245,245,0.6);
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+.confirmation-link{
+    font-size: 14px;
+    color: #c9a24d;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.confirmation-link:hover{
+    text-decoration: underline;
+}

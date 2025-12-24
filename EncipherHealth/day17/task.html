@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div a:link{
+            color:black;
+        }
+        div a:visited{
+            color:green
+        }
+        div a:active{
+            color:blue
+        }
+        div a:hover{
+            color: red;
+        }        
+        button{
+            width:100px;
+            height:30px;
+            border-radius:4px;
+            background-color: white;
+            cursor: pointer;
+        }
+        div a{
+            text-decoration: none;
+            padding-top: 4px;
+        }
+        button:hover,
+        button:focus{
+            background-color: blue;
+        }
+        .topbar{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .topbar span:hover{
+            color:darkblue
+            
+        }
+        .first{
+            display: flex;
+            gap:50px;
+        }
+        .sec :first-child{
+            color: blue;
+        }
+        .sec p{
+            color:red;
+        }
+        .sec>h4{
+            color: rgb(48, 18, 246);
+        }
+        .sec p{
+            color: grey;
+        }
+        .sec+h4{
+            font-variant: small-caps;
+            font-weight: 100;
+        }
+
+       ::marker{
+        color:teal;
+        font-size: 30px;
+       }
+       *{
+        ::selection{
+            background-color: slateblue;
+            color: white;
+        }
+       }
+       .p~ul{
+        font-style: italic;
+       }
+       img{
+        width:100px;
+        height:100px;
+        opacity:0.8;
+       }
+       img:hover{
+        opacity: 1.0;
+       }
+       .student{
+        display: flex;
+        justify-content: space-between;
+        padding:2px;
+        gap:20px;
+
+
+       }
+       .details input:hover{
+            border: 2px solid blue;
+            opacity:1;
+       }
+       .details input{
+        width:150px;
+        height:15px;
+        border-radius: 3px;
+        color:blue
+    }
+        .details input::placeholder {
+             color: #888;
+             opacity: 0.7;
+}
+    
+.student p::after{
+    content:"👍";
+}
+.student p::first-letter{
+    font-size: large;
+    font-weight: 600;
+}
+
+   
+
+    </style>
+</head>
+<body>
+    <h1>Focus — Smart Learning Platform</h1>
+    <hr>
+    <div class="topbar">
+    <span>Home</span>Courses<span>Roadmaps</span><span>Community</span><span>Contact</span>
+    </div>
+    <hr>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Focus is a clean learning space designed for students who want clarity, consistency, and confidence while mastering web technologies</p>
+    <div class="first">
+    <button>Start Learning</button>
+    <a href="m.html">Explore Roadmaps</a>
+    </div>
+    <div>
+        <h3>
+          Popular Courses  
+        </h3>
+        
+        <div class="sec">
+            <h4>1.HTML & CSS Essentials</h4>
+            <p>Master the foundation of web structure and styling.</p>
+            <h4>2.JavaScript Basics</h4>
+            <p>Understand how user actions trigger behavior on web pages</p>
+            <h4>3.SQL for Data Handling</h4>
+            <p>Learn how data is stored, retrieved, and managed efficiently.</p>
+        </div>
+        <h4 class="p">Why Students Choose Focus</h4>
+            <ul>
+                <li>Beginner-friendly explanations</li>
+                <li>Clean and minimal UI</li>
+                <li>Real-world project approach</li>
+                <li>Practice-oriented learning</li>
+
+            </ul>
+        <q style="font-size: large; color:brown ;font-weight: 300;">Success is built one consistent step at a time.</q>
+        <div>
+            <h4>Student review</h4>
+            
+            
+        </div>
+        <DIV CLASS="student">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNl8ZDycEPHjR_fQAS4cspYBPZfvug0ueTjg&s">
+        <P>Arjun, Beginner Developer-
+The platform helped me connect theory with practical usage.</P>
+<img src="https://img.jagranjosh.com/images/2023/November/15112023/the-united-states-retains-top-spot-for-indian-students.jpg">
+<p>Seraa, Web Student-Focus made CSS selectors easier to understand using real layouts.</p></DIV>
+<div class="details">
+    <h4>Stay Connected</h4>
+    <p>Get weekly tips, learning resources, and project ideas delivered to your inbox.</p>
+    Email id: <input type="textbox" placeholder="enter enmail address">
+    <button>Subscribe</button>
+</div> 
+
+</div>
+</body>
+</html>
