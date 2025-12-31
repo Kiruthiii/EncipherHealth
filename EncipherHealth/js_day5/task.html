@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let username=prompt("enter username");
+        alert(username.trim().toLowerCase());
+        let email=prompt("enter email:");
+        if(email.includes("@")) alert("valid email");
+        else alert("invalid");
+        let sente=prompt("enter sentence:")
+        let c=0;
+        for(let i=0;i<sente.length;i++){
+            if(sente.charAt(i)!=" ")c++;
+        }
+        alert("characters in the sentence:"+c);
+        let para=prompt("enter paragraph");
+        let p=para.split(" ");
+        let count=0;
+        for(i=0;i<p.length;i++){
+            count++;
+        }
+        alert("the number of words"+count);
+        let string = prompt("Enter string to find first and last character");
+        alert("First character: " + string.charAt(0) +"\nLast character: " + string.charAt(string.length - 1));
+        let s=prompt("enter sentence");
+        let w=prompt("enter word from sentence");
+        let r=prompt("enter a word to replace");
+        alert(s.replace(w,r));
+        
+       let strr = prompt("Enter a string to count uppercase");
+       let countt = 0;
+       for (let ch of strr) {
+            if (ch === ch.toUpperCase() && ch !== ch.toLowerCase()) {
+                countt++;
+            }
+        }
+        alert("Uppercase letter count: " + count);
+        let pass=prompt("enter passsword");
+            if(pass.startsWith("1")&&pass.endsWith("@"))alert("passwors set");
+            else alert("suggest storng pasword");
+        let sent = prompt("Enter a sentence");
+        let wor = sen.split(" ");
+        let longest = "";
+        for (let i = 0; i < wor.length; i++) {
+            if (wor[i].length > longest.length) {
+                longest = wor[i];
+            }
+        }
+        alert("Longest word: " + longest);
+
+        let se2 = prompt("Enter a sentence");
+        let w2 = s2.toLowerCase().split(" ");
+        let res = "";
+        for (let i = 0; i < w2.length; i++) {
+            result += w2[i].charAt(0).toUpperCase() + w2[i].slice(1) + " ";
+        }
+        alert(result.trim());
+        let mobile = prompt("Enter mobile number");
+        let masked = "";
+        for (let i = 0; i < mobile.length - 4; i++) {
+            masked += "*";
+        }
+        masked += mobile.slice(-4);
+        alert(masked);let st = prompt("Enter a string");
+        let repeated = "";
+        for (let i = 0; i < st.length; i++) {
+            if (st.indexOf(st[i]) !== st.lastIndexOf(st[i]) &&
+                !repeated.includes(st[i])) {
+                repeated += st[i] + " ";
+            }
+        }
+        alert("Repeated characters: " + repeated);
+          let stringg = prompt("Enter a string").toLowerCase();
+          let vowels = 0, consonants = 0;
+          for (let i = 0; i < stringg.length; i++) {
+                let ch = stringg[i];
+                if (ch >= 'a' && ch <= 'z') {
+                    if ("aeiou".includes(ch)) vowels++;
+                        else consonants++;
+                    }
+            }
+            alert("Vowels: " + vowels + "\nConsonants: " + consonants);  
+        let sentence = prompt("Enter a sentence");
+        let words = sentence.split(" ");
+        let result = [];
+        for (let i = 0; i < words.length; i++) {
+            if (!result.includes(words[i])) {
+                result.push(words[i]);
+            }
+        }
+        alert(result.join(" "));
+        let str1 = prompt("Enter first string").toLowerCase();
+        let str2 = prompt("Enter second string").toLowerCase();
+        let sen1 = str1.split("").sort().join("");
+        let sen2 = str2.split("").sort().join("");
+        alert(sen1 === sen2 ? "Anagram" : "Not an Anagram");
+        let s1 = prompt("Enter first string").trim();
+        let s2 = prompt("Enter second string").trim();
+        alert(s1 === s2 ? "Strings are equal" : "Strings are not equal");
+        let str = prompt("Enter mixed string");
+        let numbers = "";
+        for (let i = 0; i < str.length; i++) {
+            if (!isNaN(str[i]) && str[i] !== " ") {
+                numbers += str[i];
+            }
+        }
+        alert("Numbers: " + numbers);
+        let pwd = prompt("Enter password");
+        let hasUpper = false, hasNumber = false;
+        for (let i = 0; i < pwd.length; i++) {
+            if (pwd[i] >= 'A' && pwd[i] <= 'Z') hasUpper = true;
+                if (!isNaN(pwd[i])) hasNumber = true;
+        }
+        if (pwd.length >= 8 && hasUpper && hasNumber) {
+            alert("Strong Password");
+        } else {
+            alert("Weak Password");
+        }
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+</body>
+</html>
