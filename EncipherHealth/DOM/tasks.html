@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    input{
+      border: 1px solid gray;
+      padding: 8px;
+      outline: none; 
+    }
+  </style>
+</head>
+<body>
+    <!-- t1 -->
+  <button id="one">Submit</button>
+  <br><br>
+
+  <!-- t3 -->
+  <button id="bg">Change Background</button>
+  <br><br>
+
+  <!-- t4 -->
+  <p id="sh">shhhhhh.....</p>
+  <button id="showBtn">Show</button>
+  <button id="h">Hide</button>
+  <br><br>
+
+  <!-- t5 -->
+  <h2 id="db">Read more</h2>
+
+  <!-- t6 -->
+  <p id="fs">nooo</p>
+  <br>
+
+  <!-- t7 -->
+  <div id="me" style="width:50px;height:30px;background-color:grey;"></div>
+  <br><br>
+
+  <!-- t8 -->
+  <button id="tt">Show tool bar</button>
+  <p id="too" style="display:none;">options</p>
+  <br>
+
+  <!-- t9 -->
+  <div id="area" style="height:200px;border:1px solid black;">
+    Move mouse here
+  </div>
+  <br>
+
+  <!-- t10 -->
+  <div id="c" style="height:200px;border:1px solid black;">
+    Color changing area
+  </div>
+  <br><br>
+
+  <!-- t14 -->
+  <input id="inp" placeholder="Type here">
+  <br><br>
+
+  <!-- t15 & t16 -->
+  <form id="f">
+    <input id="i" placeholder="Form input">
+    <button type="submit">Submit</button>
+  </form>
+  <br><br>
+
+  <!-- t17&t18 -->
+  <select id="colorSelect">
+    <option value="">Selet a color</option>
+    <option value="silver">silver</option>
+    <option value="plum">plum</option>
+    <option value="beige">beige</option>
+    <option value="wheat">wheat</option>
+  </select>
+  <p id="cout"></p>
+
+  <!-- t19&t20&t21 -->
+    <input type="text" id="ip" placeholder="Type something">
+    <p id="msg" style="display:none;">Input field is active</p>
+    <p>You typed: <span id="out"></span></p>
+
+  <!-- t22 -->
+   <input type="text" id="txt" placeholder="Type something">
+   <p>Character count: <span id="count">0</span></p>
+
+   <!-- t23 -->
+  <button id="tar">trigger</button>
+  <br><br>
+
+ <!-- t25 -->
+<div id="parent" style="padding:20px; background:lightblue;">
+  Parent
+  <button id="child">Child</button>
+</div>
+<br>
+
+<!-- t26 -->
+ <div id="outer" style="padding:20px; background:lightgreen;">
+  Outer
+  <div id="inner" style="padding:20px; background:lightcoral;">
+    Inner
+  </div>
+</div><br>
+
+<!-- t27 -->
+ <div id="box" style="padding:20px; background:orange;">
+  Parent
+  <button id="bn">Child</button>
+</div><br>
+
+<!-- t28 -->
+ <div id="pa" style="padding:20px; background:lightgray;">
+  Parent
+  <button id="ch">Child</button>
+</div>
+
+
+
+</body>
+<script>
+ 
+//t1
+let btn = document.getElementById("one");
+btn.addEventListener("click", () => alert("submitted"));
+
+//t2
+window.addEventListener("load", () => {
+  console.log("page loaded");
+});
+
+//t3
+let bgc = document.getElementById("bg");
+bgc.addEventListener("click", () => {
+  document.body.style.backgroundColor = "lightgrey";
+});
+
+//t4
+let pa = document.getElementById("sh");
+let showBtn = document.getElementById("showBtn");
+let hideBtn = document.getElementById("h");
+
+showBtn.addEventListener("click", () => pa.style.display = "block");
+hideBtn.addEventListener("click", () => pa.style.display = "none");
+
+//t5
+let dc = document.getElementById("db");
+dc.addEventListener("dblclick", () => dc.innerText = "to be continued");
+
+//t6
+let fs = document.getElementById("fs");
+fs.addEventListener("dblclick", () => fs.style.fontSize = "30px");
+
+//t7
+let m = document.getElementById("me");
+m.addEventListener("mouseenter", () => m.style.backgroundColor = "peachpuff");
+m.addEventListener("mouseleave", () => m.style.backgroundColor = "brown");
+
+//t8
+let tt = document.getElementById("tt");
+let too = document.getElementById("too");
+
+tt.addEventListener("mouseover", () => too.style.display = "block");
+tt.addEventListener("mouseleave", () => too.style.display = "none");
+
+//t9
+let area = document.getElementById("area");
+area.addEventListener("mousemove", e => {
+  console.log(e.clientX, e.clientY);
+});
+
+//t10
+let c = document.getElementById("c");
+c.addEventListener("mousemove", () => {
+  c.style.backgroundColor =
+    `rgb(${Math.floor(Math.random()*255)},
+         ${Math.floor(Math.random()*255)},
+         ${Math.floor(Math.random()*255)})`;
+});
+
+//t11 + t12 
+document.addEventListener("contextmenu", e => {
+  e.preventDefault();
+  alert("Right Clicked");
+});
+
+// t13
+document.addEventListener("keydown", e => alert(e.key));
+
+//t14
+let inp = document.getElementById("inp");
+inp.addEventListener("keyup", () => inp.style.color = "blue");
+
+//t15+t16
+let form = document.getElementById("f");
+let i = document.getElementById("i");
+
+form.addEventListener("submit", e => {
+  if (i.value === "") {
+    e.preventDefault();
+    alert("Empty!");
+  }
+});
+
+//t17+t18
+let cs=document.getElementById("colorSelect")
+let co=document.getElementById("cout")
+cs.addEventListener("change",()=>{
+    if(value=""){
+        co.innerText="no color selected"
+        cs.style.backgroundColor="white"
+    }
+    else{
+        co.innerText="selected color"+cs.value
+        cs.style.backgroundColor=cs.value
+    }
+})
+
+//t19+t20+t21
+let ip = document.getElementById("ip");
+let msg = document.getElementById("msg");
+let out = document.getElementById("out");
+
+ip.addEventListener("focus", () => {
+  ip.style.border = "2px solid blue";
+  msg.style.display = "block";
+});
+
+ip.addEventListener("blur", () => {
+  ip.style.border = "1px solid gray";
+  msg.style.display = "none";
+});
+
+ip.addEventListener("input", () => {
+  out.innerText = ip.value;
+});
+
+//t22
+let txt = document.getElementById("txt");
+let count = document.getElementById("count");
+
+txt.addEventListener("input", () => {
+  count.innerText = txt.value.length;
+});
+
+//t23
+let b=document.getElementById("tar")
+b.addEventListener("click",(e)=>{
+    alert("type of event: "+e.type+"\ntriggered by: "+e.target.tagName);
+})
+
+
+//t25
+let parent = document.getElementById("parent");
+let child = document.getElementById("child");
+
+parent.addEventListener("click", () => {
+  alert("Parent clicked");
+});
+
+child.addEventListener("click", () => {
+  alert("Child clicked");
+});
+
+
+//t26
+let outer = document.getElementById("outer");
+let inner = document.getElementById("inner");
+
+outer.addEventListener("click", () => {
+  alert("Outer div clicked");
+});
+
+inner.addEventListener("click", () => {
+  alert("Inner div clicked");
+});
+
+//t27
+
+let box = document.getElementById("box");
+let bn = document.getElementById("bn");
+
+box.addEventListener("click", () => {
+  alert("Parent clicked");
+});
+
+bn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  alert("Child clicked only");
+});
+
+//t28
+let p = document.getElementById("pa");
+let cp = document.getElementById("ch");
+
+p.addEventListener("click", () => {
+  alert("Parent event");
+});
+
+cp.addEventListener("click", (e) => {
+  e.stopPropagation();
+  alert("Child event only");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</html>

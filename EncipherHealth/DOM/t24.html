@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button class="track">Button 1</button>
+<button class="track">Button 2</button>
+<button class="track">Button 3</button>
+
+<script>
+let buttons = document.querySelectorAll(".track");
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    alert("You clicked: " + e.target.innerText);
+  });
+});
+
+</script>
+
+</body>
+</html>
+
