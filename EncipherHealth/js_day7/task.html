@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="min-height: 200vh;">
+
+<button id="bgBtn">Change BG</button>
+<h3 id="counter">0</h3>
+
+<button id="cancelAlert">Cancel Alert</button>
+
+<p id="msg"></p>
+<button id="cancelMsg">Cancel Message</button>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+
+<ul id="list">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+</ul>
+
+<div id="size"></div>
+<p id="view"></p>
+
+<p id="text">Loading...</p>
+
+<button id="topBtn" style="display:none;position:fixed;bottom:20px;">Top</button>
+
+<script>
+  const bgBtn = document.getElementById("bgBtn");
+  const counter = document.getElementById("counter");
+  const cancelAlert = document.getElementById("cancelAlert");
+  const msg = document.getElementById("msg");
+  const cancelMsg = document.getElementById("cancelMsg");
+  const start = document.getElementById("start");
+  const stop = document.getElementById("stop");
+  const list = document.getElementById("list");
+  const size = document.getElementById("size");
+  const view = document.getElementById("view");
+  const topBtn = document.getElementById("topBtn");
+  const text = document.getElementById("text");
+
+  // t1
+  setTimeout(() => {
+    console.log("Hello after 3 seconds");
+  }, 3000);
+
+  // t2
+  bgBtn.onclick = () => {
+    setTimeout(() => {
+      document.body.style.backgroundColor = "lightblue";
+    }, 5000);
+  };
+
+  // t3
+  setInterval(() => {
+    console.log(new Date().toLocaleTimeString());
+  }, 1000);
+
+  // t4
+  let c = 0;
+  setInterval(() => {
+    counter.innerText = ++c;
+  }, 1000);
+
+  // t5
+  let alertId = setTimeout(() => {
+    alert("10 seconds passed");
+  }, 10000);
+
+  cancelAlert.onclick = () => clearTimeout(alertId);
+
+  // t6
+  let msgId = setTimeout(() => {
+    msg.innerText = "Message appeared!";
+  }, 5000);
+
+  cancelMsg.onclick = () => clearTimeout(msgId);
+
+  // t7
+  let n = 1;
+  let numTimer = setInterval(() => {
+    console.log(n);
+    if (n === 10) clearInterval(numTimer);
+    n++;
+  }, 1000);
+
+  // t8
+  let run = null;
+  start.onclick = () => {
+    if (run === null) {
+      run = setInterval(() => console.log("Running"), 1000);
+    }
+  };
+  stop.onclick = () => {
+    clearInterval(run);
+    run = null;
+  };
+
+  // t9
+  list.onclick = e => {
+    if (e.target.tagName === "LI") {
+      e.target.style.backgroundColor = "yellow";
+    }
+  };
+
+  // t10 & t11
+  window.addEventListener("resize", () => {
+    view.innerText = innerWidth < 600 ? "Mobile View" : "Desktop View";
+    size.innerText = `${innerWidth} x ${innerHeight}`;
+  });
+
+  // t12
+  window.addEventListener("scroll", () => {
+    topBtn.style.display = scrollY > 200 ? "block" : "none";
+  });
+
+  topBtn.onclick = () => scrollTo({ top: 0, behavior: "smooth" });
+
+  // t13
+  document.addEventListener("DOMContentLoaded", () => {
+    text.innerText = "DOM Loaded";
+  });
+
+  // t14
+  window.addEventListener("load", () => {
+    alert("window loaded");
+  });
+</script>
+
+
+</body>
+</html>
