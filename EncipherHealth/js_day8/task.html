@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- t1 -->
+<input id="numInput" placeholder="Enter number">
+<button onclick="checkEmpty()">Submit</button>
+<p id="numError"></p>
+
+<!-- t2 -->
+<button onclick="showUser()">Fetch User</button>
+<div id="userName"></div>
+
+<!-- t3 -->
+<button onclick="loadData()">Load Data</button>
+<p id="loader"></p>
+
+<!-- t4 -->
+<input id="ageInput" placeholder="Enter age">
+<button onclick="checkAge()">Check Age</button>
+
+<!-- t5 -->
+<button onclick="fetchPosts()">Get Posts</button>
+<p id="postCount"></p>
+
+<!-- t6 -->
+<p id="welcome"></p>
+
+<!-- t7 -->
+<button onclick="confirmApi()">Confirm API</button>
+<p id="confirmMsg"></p>
+
+<!-- t8 -->
+<input id="uname" placeholder="Username">
+<button onclick="validateUser()">Validate</button>
+<p id="uError"></p>
+
+<!-- t9 -->
+<button onclick="wrongApi()">Wrong API</button>
+<p id="apiError"></p>
+
+<!-- t10 -->
+<button onclick="changeBg()">Change BG</button>
+
+<!-- t11 -->
+<p id="msg">Hello Message</p>
+
+<!-- t12 -->
+<button onclick="storeUser()">Store User</button>
+<p id="stored"></p>
+
+<!-- t13 -->
+<button onclick="redirectFail()">Fail Redirect</button>
+
+<!-- t14 -->
+<button onclick="listUsers()">List Users</button>
+<ul id="userList"></ul>
+
+<!-- t15 -->
+<button onclick="loadBoth()">Load Users & Posts</button>
+<p id="both"></p>
+
+<!-- t16 -->
+<button onclick="showSize()">Show Screen</button>
+<p id="size"></p>
+
+<!-- t17 -->
+<button onclick="tryFinally()">Try Fetch</button>
+<p id="finalMsg"></p>
+
+<!-- t18 -->
+<button onclick="askName()">Ask Name</button>
+<p id="greet"></p>
+
+<!-- t19 -->
+<button id="apiBtn" onclick="disableBtn()">API Button</button>
+
+<!-- t20 -->
+<button onclick="reloadPage()">Save</button>
+
+<script>
+/* t1 */
+function checkEmpty(){
+  try{
+    let v = numInput.value;
+    if(!v) throw "Error: Input cannot be empty";
+    numError.innerText = "";
+  }catch(e){
+    numError.innerText = e;
+  }
+}
+
+/* t2 */
+function showUser(){
+  userName.innerText = "User Name: Alex";
+}
+
+/* t3 */
+function loadData(){
+  loader.innerText = "Loading...";
+  setTimeout(()=>loader.innerText="Data loaded successfully",1500);
+}
+
+/* t4 */
+function checkAge(){
+  try{
+    let age = ageInput.value;
+
+    if(age < 18){
+      throw "Not eligible";  
+    }
+
+    alert("Eligible");
+  }
+  catch(err){
+    alert(err);  
+  }
+}
+
+/* t5 */
+async function fetchPosts(){
+  let res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  let data = await res.json();
+  postCount.innerText = "Total Posts: " + data.length;
+}
+
+/* t6 */
+new Promise(r=>setTimeout(r,2000))
+.then(()=>welcome.innerText="Welcome User");
+
+/* t7 */
+function confirmApi(){
+  if(!confirm("Allow API call?"))
+    confirmMsg.innerText="Request cancelled by user";
+}
+
+/* t8 */
+function validateUser(){
+  try{
+    if(uname.value.length < 5)
+      throw "Error: Username must be at least 5 characters";
+    uError.innerText="";
+  }catch(e){
+    uError.innerText=e;
+  }
+}
+
+/* t9 */
+async function wrongApi(){
+  try{
+    await fetch("https://wrongurl.com");
+  }catch{
+    apiError.innerText="Error: Failed to fetch data";
+  }
+}
+
+/* t10 */
+async function changeBg(){
+  await fetch("https://jsonplaceholder.typicode.com/users");
+  document.body.style.background="lightgreen";
+}
+
+/* t11 */
+setTimeout(()=>msg.style.display="none",3000);
+
+/* t12 */
+async function storeUser(){
+  let r = await fetch("https://jsonplaceholder.typicode.com/users/1");
+  let d = await r.json();
+  localStorage.setItem("user", d.name);
+  stored.innerText = "Stored Username: " + d.name;
+}
+
+/* t13 */
+function redirectFail(){
+  window.location.href="error.html";
+}
+
+/* t14 */
+async function listUsers(){
+  let r = await fetch("https://jsonplaceholder.typicode.com/users");
+  let d = await r.json();
+  userList.innerHTML="";
+  d.forEach(u=>{
+    let li=document.createElement("li");
+    li.innerText=u.name;
+    userList.appendChild(li);
+  });
+}
+
+/* t15 */
+async function loadBoth(){
+  await Promise.all([
+    fetch("https://jsonplaceholder.typicode.com/users"),
+    fetch("https://jsonplaceholder.typicode.com/posts")
+  ]);
+  both.innerText="Users & Posts loaded";
+}
+
+/* t16 */
+function showSize(){
+  size.innerText = `Width: ${innerWidth}px, Height: ${innerHeight}px`;
+}
+
+/* t17 */
+async function tryFinally(){
+  try{
+    await fetch("https://jsonplaceholder.typicode.com/users");
+    finalMsg.innerText="Data fetched";
+  }catch{}
+  finally{
+    finalMsg.innerText += "\nProcess completed";
+  }
+}
+
+/* t18 */
+function askName(){
+  let n = prompt("Enter name");
+  greet.innerText = "Hello " + n + " 👋";
+}
+
+/* t19 */
+async function disableBtn(){
+  apiBtn.disabled=true;
+  await fetch("https://jsonplaceholder.typicode.com/users");
+  apiBtn.disabled=false;
+}
+
+/* t20 */
+function reloadPage(){
+  location.reload();
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
