@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat App</title>
+
+<style>
+body{
+    background-color: rgb(199, 246, 246);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.content{
+    background-color: white;
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px gray;
+    display: flex;
+    flex-direction: column;
+}
+ 
+h1{
+    margin: 0;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+}
+
+.chat-box{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.left{
+    background-color: blue;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px 10px 10px 0;
+    width: fit-content;
+    max-width: 75%;
+}
+
+.right{
+    background-color: #e5e5e5;
+    padding: 10px 14px;
+    border-radius: 10px 10px 0 10px;
+    width: fit-content;
+    max-width: 75%;
+    margin-left: auto;
+}
+
+.input-box{
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+input{
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="content">
+    <h1>CHAT APP</h1>
+
+    <div class="chat-box" id="chatBox">
+        <div class="left">How was your day?</div>
+        <div class="right">It was good 😊</div>
+    </div>
+
+    <div class="input-box">
+        <input type="text" id="msg" placeholder="Type a message...">
+        <button onclick="sendMsg()">Send</button>
+    </div>
+</div>
+
+<script>
+const chatBox = document.getElementById("chatBox");
+const msgInput = document.getElementById("msg");
+
+function sendMsg() {
+    const text = msgInput.value.trim();
+    if (text === "") return;
+
+    const userMsg = document.createElement("div");
+    userMsg.className = "right";
+    userMsg.innerText = text;
+    chatBox.appendChild(userMsg);
+
+    msgInput.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    const typing = document.createElement("div");
+    typing.className = "left";
+    typing.style.color = "gray";
+    typing.innerText = "...typing";
+    chatBox.appendChild(typing);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    setTimeout(() => {
+        typing.remove();
+
+        const reply = document.createElement("div");
+        reply.className = "left";
+        reply.innerText = "Hmm interesting 😮";
+        chatBox.appendChild(reply);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }, 1500);
+}
+</script>
+</body>
+</html>
