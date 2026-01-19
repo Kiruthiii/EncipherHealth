@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+  <h2>User Registration</h2>
+
+  <form id="userForm">
+
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name">
+      <small class="error" id="nameError"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea id="address"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password">
+      <small class="error" id="passwordError"></small>
+    </div>
+
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email">
+      <small class="error" id="emailError"></small>
+    </div>
+
+
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob">
+    </div>
+
+
+    <div class="form-group">
+      <label>Gender</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="gender" value="Male"> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="Female"> Female
+        </label>
+      </div>
+      <small class="error" id="genderError"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="course">Course</label>
+      <select id="course">
+        <option value="">Select Course</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>Java</option>
+      </select>
+      <small class="error" id="courseError"></small>
+    </div>
+
+
+    <div class="checkbox-group">
+      <label>
+        <input type="checkbox" id="agree">
+        I agree to the terms & conditions
+      </label>
+      <small class="error" id="agreeError"></small>
+    </div>
+
+    <button type="submit">Submit</button>
+
+  </form>
+</div>
+
+<script src="form.js"></script>
+</body>
+</html>
