@@ -1,0 +1,36 @@
+.confirmation-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  padding: 40px 20px;
+}
+
+.confirmation-card {
+  background: #fff;
+  padding: 40px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.confirmation-sub {
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.confirmation-text {
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+.confirmation-note {
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.confirmation-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}

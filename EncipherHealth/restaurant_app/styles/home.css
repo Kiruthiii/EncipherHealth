@@ -1,0 +1,264 @@
+/* =========================
+   HERO / HOME SECTION
+========================= */
+
+.home {
+  min-height: 100vh;
+  background: url("https://cdn.pixabay.com/photo/2015/09/14/11/43/restaurant-939435_1280.jpg")
+    center/cover no-repeat;
+  position: relative;
+  color: #fff;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+}
+
+.topleft a {
+  margin-right: 24px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.topleft .nav-active {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px;
+}
+
+.topright a {
+  margin-left: 16px;
+  text-decoration: none;
+}
+
+.login-btn {
+  color: #fff;
+  font-weight: 500;
+}
+
+.topright button {
+  padding: 10px 20px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Logo / Hero text */
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.logo h2 {
+  font-size: 48px;
+  letter-spacing: 2px;
+}
+
+.hero-sub {
+  margin-top: 12px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* =========================
+   DESTINATION SECTION
+========================= */
+
+#dest {
+  padding: 80px 60px;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-head h2 {
+  font-size: 32px;
+}
+
+.section-sub {
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+.main {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+}
+
+.content h3 {
+  margin-bottom: 16px;
+}
+
+.content p {
+  line-height: 1.7;
+}
+
+.img {
+  flex: 1;
+}
+
+.img img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+/* =========================
+   SIGNATURE DISHES
+========================= */
+
+#signaturedishes {
+  padding: 80px 60px;
+  background: #f8f8f8;
+}
+
+.popular {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.dishes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.dish img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.dish h3 {
+  margin: 12px 0;
+}
+
+.dish p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.dish a {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+/* =========================
+   MENU PREVIEW
+========================= */
+
+#menu {
+  padding: 80px 60px;
+}
+
+.menu-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ourmenu {
+  text-align: center;
+}
+
+.category {
+  margin-top: 40px;
+}
+
+.category-sub {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+
+.menu-item {
+  margin-bottom: 20px;
+}
+
+.menu-head {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.menu-desc {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.menu-note {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* =========================
+   OUR STORY
+========================= */
+
+#ourstory {
+  padding: 80px 60px;
+  background: #f8f8f8;
+}
+
+#ourstory h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.story {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.story .image img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.story .cont h3 {
+  margin-bottom: 8px;
+}
+
+.story-sub {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .main,
+  .story {
+    flex-direction: column;
+  }
+
+  .dishes {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    padding: 24px;
+  }
+}
