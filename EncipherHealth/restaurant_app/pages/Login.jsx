@@ -4,7 +4,6 @@ import "../styles/login.css";
 const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // No authentication logic in reference
   };
 
   return (
@@ -36,3 +35,4 @@ const Login = () => {
 };
 
 export default Login;
+
