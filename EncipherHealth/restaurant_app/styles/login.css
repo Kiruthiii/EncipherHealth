@@ -89,7 +89,6 @@ form button:active {
   transform: scale(0.98);
 }
 
-/* Footer Text */
 .create {
   margin-top: 18px;
   font-size: 14px;
@@ -106,3 +105,4 @@ form button:active {
 .create a:hover {
   text-decoration: underline;
 }
+
