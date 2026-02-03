@@ -6,7 +6,6 @@ const CreateAccount = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Reference behavior: redirect to login after submit
     navigate("/login");
   };
 
@@ -45,3 +44,4 @@ const CreateAccount = () => {
 };
 
 export default CreateAccount;
+
